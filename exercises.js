@@ -347,7 +347,7 @@ var charCountMap;
  *
  * takes in an array of strings and returns an object with the string as the key and the number of occurences as the value.
  *
- * @param {String}
+ * @param {Array}
  * @return {Object}
  */
 var frequencyMap;
