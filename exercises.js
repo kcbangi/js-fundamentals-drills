@@ -357,7 +357,7 @@ var frequencyMap;
  * takes in an array of tuples and and returns an object whos keys are 
  * the first element of the tuples and values are second element of the tuples.
  *
- * @param {String}
+ * @param {Array}
  * @return {Object}
  */
 var tupleConvertToObject;
