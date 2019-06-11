@@ -163,7 +163,8 @@ let createZeroFilledArray = function(num) {
  */
 
 let poppedArray= function(arr) {
-  return arrayLength.pop();
+  arr.pop();
+  return arr;
 };
 
 /* #splitString
@@ -173,7 +174,9 @@ let poppedArray= function(arr) {
  * @param {String}
  * @return {Array}
  */
-let splitString;
+let splitString = function(str) {
+  return str.split('');
+};
 
 /* #lengthOfLast
  *
@@ -444,7 +447,7 @@ module.exports = {
   objectSize: objectSize,
   createZeroFilledArray: createZeroFilledArray,
   poppedArray: poppedArray,
-  splitString: null,
+  splitString: splitString,
   lengthOfLast: null,
   sumBelowTen: null,
   moreThanTenLetters: null,
