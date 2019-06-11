@@ -480,7 +480,7 @@ let arrayToObject = function(arr) {
 let arraysToObject = function(arr1, arr2) {
   let obj = {};
   for(let i = 0; i <arr1.length; i++) {
-    obj[arr[i]] = arr2[i];
+    obj[arr1[i]] = arr2[i];
   }
   return obj;
 };
@@ -493,8 +493,18 @@ let arraysToObject = function(arr1, arr2) {
  * @param {Object}
  * @return {Array}
  */
-let objectsToTuples = function() {
-  
+
+let objectsToTuples = function(obj1, obj2) {
+  let arr = [];
+  for(key in obj1) {
+    let tuple = [key, obj1[key]];
+    arr.push(tuple);
+  }
+  for(key in obj2) {
+    let tuple = [key, obj2[key]];
+    arr.push(tuple);
+  }
+  return arr;
 };
 
 /* #mapArrayValues
@@ -504,7 +514,14 @@ let objectsToTuples = function() {
  * @param {Array}
  * @return {Object}
  */
-let mapArrayValues;
+
+let mapArrayValues = function(arr) {
+  let obj = {};
+  for(let i = 0; i < arr.length; i++) {
+    obj[arr[i]] = true;
+  }
+  return obj;
+};
 
 /* #mapStringCounts
  *
@@ -599,8 +616,8 @@ module.exports = {
   objectToArray: objectToArray,
   arrayToObject: arrayToObject,
   arraysToObject: arraysToObject,
-  objectsToTuples: null,
-  mapArrayValues: null,
+  objectsToTuples: objectsToTuples,
+  mapArrayValues: mapArrayValues,
   mapStringCounts: null,
   arrayToObjectNums: null,
   stringToKeys: null,
