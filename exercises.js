@@ -148,7 +148,7 @@ let objectSize = function(obj) {
 
 let createZeroFilledArray = function(num) {
   let arr = [];
-  for(let i = 0; i <num; i++) {
+  for(let i = 0; i < num; i++) {
     arr.push(0);
   }
   return arr;
@@ -299,7 +299,14 @@ let countObjects = function(arr) {
  * @param {Object}
  * @return {Array}
  */
-let getObjectKeys;
+
+let getObjectKeys = function(obj) {
+  let result = [];
+  for(let key in obj) {
+    result.push(key)
+  }
+  return result;
+};
 
 /* #getObjectValues
  *
@@ -308,7 +315,14 @@ let getObjectKeys;
  * @param {Object}
  * @return {Array}
  */
-let getObjectValues;
+
+let getObjectValues = function(obj) {
+  let result = [];
+  for(let key in obj) {
+    result.push(obj[key])
+  }
+  return result;
+};
 
 /* #makeObject
  *
@@ -318,7 +332,12 @@ let getObjectValues;
  * @param {String}
  * @return {Object}
  */
-let makeObject;
+
+let makeObject = function(key, val) {
+  let obj = {};
+  obj[key] = val;
+  return obj;
+};
 
 /* #makeObjectReverse
  *
@@ -328,7 +347,12 @@ let makeObject;
  * @param {String}
  * @return {Object}
  */
-let makeObjectReverse;
+
+let makeObjectReverse = function(key, val) {
+  let obj = {};
+  obj[val] = key;
+  return obj;
+};
 
 /* #tupleToObject
  *
@@ -506,10 +530,10 @@ module.exports = {
   sumAllPositive: sumAllPositive,
   stringCountBelowThree: stringCountBelowThree,
   countObjects: countObjects,
-  getObjectKeys: null,
-  getObjectValues: null,
-  makeObject: null,
-  makeObjectReverse: null,
+  getObjectKeys: getObjectKeys,
+  getObjectValues: getObjectValues,
+  makeObject: makeObject,
+  makeObjectReverse: makeObjectReverse,
   tupleToObject: null,
   tupleToObjectReverse: null,
   strToKeys: null,
