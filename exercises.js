@@ -130,7 +130,10 @@ let convertToArray = function(obj) {
  * @param {Object}
  * @return {Number}
  */
-let objectSize;
+let objectSize = function(obj) {
+  let length = Object.keys(obj).length;
+  return length;
+};
 
 /* #createZeroFilledArray
  *
@@ -425,7 +428,7 @@ module.exports = {
   countStrings: countStrings,
   countAllStrings: countAllStrings,
   convertToArray: convertToArray,
-  objectSize: null,
+  objectSize: objectSize,
   createZeroFilledArray: null,
   poppedArray: null,
   splitString: null,
