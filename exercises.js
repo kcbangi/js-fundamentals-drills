@@ -100,6 +100,7 @@ let countStrings = function(arr) {
  * @param {Array}
  * @return {Number}
  */
+
 let countAllStrings = function(arr) {
   let sum  = 0;
   for(let i = 0; i < arr.length; i++) {
@@ -115,6 +116,7 @@ let countAllStrings = function(arr) {
  * @param {Object}
  * @return {Array}
  */
+
 let convertToArray = function(obj) {
   let arr = [];
   for(let key in obj) {
@@ -130,6 +132,7 @@ let convertToArray = function(obj) {
  * @param {Object}
  * @return {Number}
  */
+
 let objectSize = function(obj) {
   let length = Object.keys(obj).length;
   return length;
@@ -142,7 +145,14 @@ let objectSize = function(obj) {
  * @param {Number}
  * @return {Array}
  */
-let createZeroFilledArray;
+
+let createZeroFilledArray = function(num) {
+  let arr = [];
+  for(let i = 0; i <num; i++) {
+    arr.push(0);
+  }
+  return arr;
+};
 
 /* #poppedArray
  *
@@ -151,7 +161,10 @@ let createZeroFilledArray;
  * @param {Array}
  * @return {Array}
  */
-let poppedArray;
+
+let poppedArray= function(arr) {
+  return arrayLength.pop();
+};
 
 /* #splitString
  *
@@ -429,8 +442,8 @@ module.exports = {
   countAllStrings: countAllStrings,
   convertToArray: convertToArray,
   objectSize: objectSize,
-  createZeroFilledArray: null,
-  poppedArray: null,
+  createZeroFilledArray: createZeroFilledArray,
+  poppedArray: poppedArray,
   splitString: null,
   lengthOfLast: null,
   sumBelowTen: null,
