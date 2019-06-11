@@ -251,6 +251,7 @@ let multiplyAll = function(arr) {
  * @param {Array}
  * @return {Number}
  */
+
 let sumAllPositive = function(arr) {
   let result = 0;
   for(let i = 0; i < arr.length; i++) {
@@ -268,6 +269,7 @@ let sumAllPositive = function(arr) {
  * @param {Array}
  * @return {Number}
  */
+
 let stringCountBelowThree = function(arr) {
   let result = 0;
   for(let i = 0; i < arr.length; i++) {
@@ -285,7 +287,10 @@ let stringCountBelowThree = function(arr) {
  * @param {Array}
  * @return {Number}
  */
-let countObjects;
+let countObjects = function(arr) {
+  return arr.length;
+
+};
 
 /* #getObjectKeys
  *
@@ -500,7 +505,7 @@ module.exports = {
   multiplyAll: multiplyAll,
   sumAllPositive: sumAllPositive,
   stringCountBelowThree: stringCountBelowThree,
-  countObjects: null,
+  countObjects: countObjects,
   getObjectKeys: null,
   getObjectValues: null,
   makeObject: null,
