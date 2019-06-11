@@ -408,7 +408,7 @@ let strToKeys = function(arr) {
 
 let getValues = function(obj) {
   let arr = [];
-  for(var key in obj) {
+  for(let key in obj) {
     arr.push(obj[key]);
   }
   return arr;
@@ -424,7 +424,7 @@ let getValues = function(obj) {
 
 let getKeys = function(obj) {
   let arr = [];
-  for(var key in obj) {
+  for(let key in obj) {
     arr.push(key)
   }
   return arr;
@@ -438,7 +438,17 @@ let getKeys = function(obj) {
  * @param {Object}
  * @return {Array}
  */
-let objectToArray;
+
+ let objectToArray = function(obj) {
+   let arr = [];
+   for(let key in obj) {
+    let tuple = [];
+    tuple[0] = key;
+    tuple[1] = obj[key];
+    arr.push(tuple);  
+  }
+  return arr;
+ };
 
 /* #arrayToObject
  *
@@ -448,7 +458,14 @@ let objectToArray;
  * @param {Array}
  * @return {Object}
  */
-let arrayToObject;
+
+let arrayToObject = function(arr) {
+  let obj = {};
+  for(let i = 0; i <arr.length; i++) {
+    obj[arr[i]] = false;
+  }
+  return obj;
+};
 
 /* #arraysToObject
  *
@@ -459,7 +476,14 @@ let arrayToObject;
  * @param {Array}
  * @return {Object}
  */
-let arraysToObject;
+
+let arraysToObject = function(arr1, arr2) {
+  let obj = {};
+  for(let i = 0; i <arr1.length; i++) {
+    obj[arr[i]] = arr2[i];
+  }
+  return obj;
+};
 
 /* #objectsToTuples
  *
@@ -469,7 +493,9 @@ let arraysToObject;
  * @param {Object}
  * @return {Array}
  */
-let objectsToTuples;
+let objectsToTuples = function() {
+  
+};
 
 /* #mapArrayValues
  *
@@ -570,9 +596,9 @@ module.exports = {
   strToKeys: strToKeys,
   getValues: getValues,
   getKeys: getKeys,
-  objectToArray: null,
-  arrayToObject: null,
-  arraysToObject: null,
+  objectToArray: objectToArray,
+  arrayToObject: arrayToObject,
+  arraysToObject: arraysToObject,
   objectsToTuples: null,
   mapArrayValues: null,
   mapStringCounts: null,
