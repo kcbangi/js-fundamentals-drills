@@ -174,6 +174,7 @@ let poppedArray= function(arr) {
  * @param {String}
  * @return {Array}
  */
+
 let splitString = function(str) {
   return str.split('');
 };
@@ -198,6 +199,7 @@ let lengthOfLast = function(arr) {
  * @param {Array}
  * @return {Number}
  */
+
 let sumBelowTen = function(arr) {
   let sum = 0;
   for(let i = 0; i < arr.length; i++) {
@@ -215,6 +217,7 @@ let sumBelowTen = function(arr) {
  * @param {Array}
  * @return {Number}
  */
+
 let moreThanTenLetters = function(arr) {
   let ele = 0;
   for(let i = 0; i < arr.length; i++) {
@@ -232,7 +235,14 @@ let moreThanTenLetters = function(arr) {
  * @param {Array}
  * @return {Number}
  */
-let multiplyAll;
+
+let multiplyAll = function(arr) {
+  let result = 1;
+  for(let i = 0; i <arr.length; i++) {
+    result *= arr[i];
+  }
+  return result;
+};
 
 /* #sumAllPositive
  *
@@ -241,7 +251,15 @@ let multiplyAll;
  * @param {Array}
  * @return {Number}
  */
-let sumAllPositive;
+let sumAllPositive = function(arr) {
+  let result = 0;
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] > 0) {
+      result += arr[i];
+    }
+  }
+  return result;
+};
 
 /* #stringCountBelowThree
  *
@@ -250,7 +268,15 @@ let sumAllPositive;
  * @param {Array}
  * @return {Number}
  */
-let stringCountBelowThree;
+let stringCountBelowThree = function(arr) {
+  let result = 0;
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i].length < 4) {
+      result += 1;
+    }
+  }
+  return result;
+};
 
 /* #countObjects
  *
@@ -471,9 +497,9 @@ module.exports = {
   lengthOfLast: lengthOfLast,
   sumBelowTen: sumBelowTen,
   moreThanTenLetters: moreThanTenLetters,
-  multiplyAll: null,
-  sumAllPositive: null,
-  stringCountBelowThree: null,
+  multiplyAll: multiplyAll,
+  sumAllPositive: sumAllPositive,
+  stringCountBelowThree: stringCountBelowThree,
   countObjects: null,
   getObjectKeys: null,
   getObjectValues: null,
