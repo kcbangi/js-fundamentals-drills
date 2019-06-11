@@ -199,7 +199,13 @@ let lengthOfLast = function(arr) {
  * @return {Number}
  */
 let sumBelowTen = function(arr) {
-
+  let sum = 0;
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] < 10) {
+      sum += arr[i];
+    }
+  }
+  return sum;
 };
 
 /* #moreThanTenLetters
@@ -209,7 +215,15 @@ let sumBelowTen = function(arr) {
  * @param {Array}
  * @return {Number}
  */
-let moreThanTenLetters;
+let moreThanTenLetters = function(arr) {
+  let ele = 0;
+  for(let i = 0; i < arr.length; i++) {
+    if (arr[i].length > 10) {
+      ele += 1;
+    }
+  }
+  return ele;
+};
 
 /* #multiplyAll
  *
@@ -455,8 +469,8 @@ module.exports = {
   poppedArray: poppedArray,
   splitString: splitString,
   lengthOfLast: lengthOfLast,
-  sumBelowTen: null,
-  moreThanTenLetters: null,
+  sumBelowTen: sumBelowTen,
+  moreThanTenLetters: moreThanTenLetters,
   multiplyAll: null,
   sumAllPositive: null,
   stringCountBelowThree: null,
